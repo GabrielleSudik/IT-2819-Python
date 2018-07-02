@@ -1,6 +1,8 @@
 # Assignment 07 - for loops
-# Make sure you replace my name with yours
-print("Assignment 07 - written by Matt Weisfeld")
+# Your mission is to use a for loop to check to see if the number entered
+# by the use is actually a prime number.
+
+print("Assignment 07 - written by Gabrielle Sudik")
 # get user input
 num = input("Enter a number: ")
 while num.upper()!= "X":
@@ -13,7 +15,7 @@ while num.upper()!= "X":
  # prime numbers are greater than 1
  if numInt > 1:
  print("Check for factors.")
- # code for prime number generation goes here
+ # code for prime number generation goes here:
 
  # if input number is less than
  # or equal to 1, it is not prime
