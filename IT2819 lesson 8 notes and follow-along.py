@@ -18,15 +18,16 @@ print(randint(1,10))
 #but using the library name makes code more readable.
 
 #to stop a program:
-#sys.exit()
+#sys.exit() [you coded it out so you can continue taking notes]
 print('Gooddbye')
 #that last line won't print
 #(hmm, plain old exit() will also give an alert saying the program is ended.
 
 #there are third-party modules too. install using "pip" program, from command line.
 #check appendix A for instructions. pip itself is already installed on windows.
-#to install a module: pip install <name of module> 
+#to install a module from cmd: pip install <name of module> 
 
 import pyperclip
 #hmm... error message. my research and attempts to fix aren't working.
 #check again when fresh
+

@@ -39,3 +39,6 @@ for i in range(5, -1, -1):
 print()
 
 # you can use break or continue in for loops
+
+for i in range(5,8):
+    print("Quiz time: " + str(i))
