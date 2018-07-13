@@ -14,27 +14,29 @@ class Shape:
         for i in range(self.n):
             print("Side",i+1,"is",self.sides[i])
  
-t = Shape(3)
-t.inputSides()
-t.dispSides()
-
 #your code:
 
-print('Now let\'s get the area of a triangle.')
 class Triangle(Shape):
+
     def __init__(self):
-        self.base = [float(input('What is the width of the triangle\'s base?'))]
-        self.height = [float(input('What is the triangle\'s height?'))]
-
+        Shape.__init__(self,3)
+        #another way to write that is with the built-in function super.
+        #noted here for eduational purposes:
+        #super().__init__(3)
+        
     def findArea(self):
-        print('Let\'s multiple base and height to get the area.')
-        self.area = (self.base*self.height)/2
-        print('The area of your triangle is ', self.area)
+        a, b, c = self.sides
+        semi = (a + b + c) / 2
+        print('The semi-perimeter is ' +str(semi))
+        area = (semi*(semi-a)*(semi-b)*(semi-c)) ** 0.5
+        print('The area of the triangle is %0.2f' %area)
 
-    #def printArea(self.area):
-
-
-t2 = Triangle()
-t2.findArea()
-#t2.printArea(self.area)
+t = Triangle()
+t.inputSides()
+t.dispSides()
+t.findArea()
     
+#use 5,4,3 to understand the results
+#remember w*h/2 = area
+# ** is like sqrt
+#Heron's Formula: sqrt[(semi*(semi-a)*(semi-b)*(semi-c))]

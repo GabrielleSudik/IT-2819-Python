@@ -31,16 +31,31 @@ print('a =',a)
 
 def first_function():
     b = 2
-    print('b =',b)
+    print('b =',b) #2
     def second_function():
         b = 3
-        print('b =',b)
+        print('b =',b) #3
     second_function()
     b = 4
+    print('b =',b) #4
+
+def third_function():
+    b = 7
+    print('b =',b) #7
+
+def fourth_function():    
+    global b
+    b = 8
     print('b =',b)
 
 b = 5
-first_function()
-print('b =',b)
+print('b =',b) #5 (global)
+first_function() #2,3 (local)
+print('b =',b) #5 (global)
+b = 6
+print('b =',b) #6 (global)
+third_function() #7 (local)
+print('b =',b) #6 (global)
+fourth_function() #8 (global, assigned in local)
+print('b =',b) #8 global (set in fourth_function)
 
-#keep experimenting. see you lesson 10 notes.
