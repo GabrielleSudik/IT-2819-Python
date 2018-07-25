@@ -15,7 +15,7 @@ print("Program Written by Matt Weisfeld and Gabrielle Sudik")
 
 while True:
 
-    temp = input("Input the temperature you would like to convert. (e.g., 45F, 102C)\n" +
+    temp = input("Input the temperature you would like to convert. (e.g., 45F, 102C, 1000K)\n" +
                    "Pressing X will end the program: ")
 
     if temp[-1].upper() == "X":
@@ -49,6 +49,19 @@ while True:
             print("The temperature in", output_type, "is", result, "degrees.")
             if (result <= 0):
                 print("That is below absolute zero, and is impossible! Oops!")
+
+        elif input_type.upper() == "K":
+
+            result = int(round(degree) - 273)
+            output_type = "Celcius"
+            print("The temperature in", output_type, "is", result, "degrees.")
+            # (K - 273.15)* 1.8000 + 32.00
+            result = int(round((degree - 273)*1.8 + 32))
+            output_type = "Fahrenheit"
+            print("The temperature in", output_type, "is", result, "degrees.")
+            if (degree < 0):
+                print("That is below absolute zero, and is impossible! Oops!")
+
 
         else:
             print("Sorry, you need to specify C or F.")
