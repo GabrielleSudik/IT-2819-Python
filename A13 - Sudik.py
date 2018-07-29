@@ -5,17 +5,17 @@
 
         
 
-class Node :
+class Node : #holds the data and the pointer to next data
         def __init__( self, data ) :
                 self.data = data
-                self.next = None
+                self.next = None #points to next node
                 self.prev = None
 
 class LinkedList :
-        def __init__( self ) :
+        def __init__( self ) : #creates the linked list
                 self.head = None                
 
-        def add( self, data ) :
+        def add( self, data ) : #adds nodes to beginning of list
                 node = Node( data )
                 if self.head == None :  
                         self.head = node
@@ -27,9 +27,9 @@ class LinkedList :
         def search( self, k ) :
                 p = self.head
                 if p != None :
-                        while p.next != None :
+                        while p.next != None : #will look for nodes one at a time
                                 if ( p.data == k ) :
-                                        return p                                
+                                        return p  #until it finds the data being looked for                              
                                 p = p.next
                         if ( p.data == k ) :
                                 return p
@@ -45,9 +45,10 @@ class LinkedList :
                         s += p.data
                 return s
 
-        def remove( self, data ) :
-                print('placeholder' + data)
-                return None
+#new code:
+        def remove( self, r ) : #this "rearranges" the nodes, thereby removing the one you want
+                r.prev.next = r.next #r's previous then next node (ie, r's current) is set to the next node
+
 
 # example code
 l = LinkedList()
@@ -64,5 +65,35 @@ print ("Add: c")
 l.add( 'c' )
 print ("List = ", l, "\n")
 
+print ("Remove: b")
+removeMe = l.search('b')
+l.remove(removeMe)
+print("List = ", l, "\n")
 
+#practicing to confirm:
 
+l2 = LinkedList()
+
+print ("Add: ant")
+l2.add( 'ant' )
+print ("List = ", l2, "\n")
+
+print ("Add: bat")
+l2.add( 'bat' )
+print ("List = ", l2, "\n")
+
+print ("Add: cat")
+l2.add( 'cat' )
+print ("List = ", l2, "\n")
+
+print ("Add: dog")
+l2.add( 'dog' )
+print ("List = ", l2, "\n")
+
+print ("Add: ent")
+l2.add( 'ent' )
+print ("List = ", l2, "\n")
+
+print ("Remove: dog")
+l2.remove(l2.search('dog')) #2 steps put on one line
+print("List = ", l2, "\n")

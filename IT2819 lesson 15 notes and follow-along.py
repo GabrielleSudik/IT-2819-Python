@@ -1,6 +1,6 @@
 # lesson 15 follow-along
 # methods and list methods
-# like a function but called on a certain value
+# like a function but called on a certain kind of value
 
 spam = ['hello', 'hi', 'howdy', 'hey']
 print(spam.index('hello')) #prints 0
